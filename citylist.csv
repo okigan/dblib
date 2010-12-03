@@ -1,0 +1,474 @@
+City,CountryRegion,Long,Lat,Airport,Dial Prefix,Area Code,TZ Index
+Aberdeen,United Kingdom,-2.07,57.13,ABZ,44,1224,85
+Abu Dhabi,United Arab Emirates,54.52,24.42,AUH,971,2,165
+Abuja,Nigeria,7.17,9.17,ABV,234,9,113
+Accra,Ghana,-0.2,5.56,ACC,233,21,90
+Addis Ababa,Ethiopia,38.75,9.02,ADD,251,1,155
+"Adelaide, SA",Australia,138.6,-34.93,ADL,61,8,250
+"Agana, GU",Guam,144.75,13.47,GUM,1,671,275
+Ahmadabad,India,72.6,23.05,AMD,91,79,190
+Akita,Japan,140.11,39.7,AXT,81,188,235
+"Akron, OH",USA,-81.49,41.08,CAK,1,330,35
+Alborg,Denmark,9.51,57.05,AAL,45,,105
+"Albuquerque, NM",USA,-106.65,35.08,ABQ,1,505,10
+"Alexandria, VA",USA,-77.06,38.8,DCA,1,703,35
+Algiers,Algeria,3.05,36.77,ALG,213,2,113
+"Allentown, PA",USA,-75.46,40.59,ABE,1,610,35
+Almaty,Kazakhstan,76.95,43.25,ALA,7,327,201
+Amman,Jordan,35.93,31.95,AMM,962,6,140
+Amsterdam,Netherlands,4.9,52.38,AMS,31,20,110
+"Anaheim, CA",USA,-117.91,33.83,ANA,1,714,4
+"Anchorage, AK",USA,-149.88,61.21,ANC,1,907,3
+Andorra la Vella,Andorra,1.52,42.51,ALV,376,,110
+Angers,France,-0.55,47.47,ANE,33,2,105
+Ankara,Turkey,32.85,39.93,ANK,90,312,130
+"Ann Arbor, MI",USA,-83.73,42.28,ARB,1,313,35
+Antananarivo,Madagascar,47.52,-18.92,TNR,261,2,155
+Antwerp,Belgium,4.4,51.21,ANR,32,3,105
+Apia,Samoa,-171.74,-13.86,APW,685,,1
+Ashgabat,Turkmenistan,58.38,37.95,ASB,99,312,185
+Asmara,Eritrea,38.93,15.33,ASM,291,1,155
+Asunción,Paraguay,-57.64,-25.27,ASU,595,21,56
+Athens,Greece,23.71,37.96,ATH,30,1,130
+"Atlanta, GA",USA,-84.39,33.74,ATL,1,404,35
+Auckland,New Zealand,174.76,-36.86,AKL,64,9,290
+"Austin, TX",USA,-97.73,30.28,AUS,1,512,20
+Badajoz,Spain,-6.96,38.88,BJZ,34,924,105
+Baghdad,Iraq,44.4,33.33,SDA,964,1,158
+"Bakersfield, CA",USA,-119,35.38,BFL,1,805,4
+Baku,Azerbaijan,49.86,40.37,BAK,994,12,170
+"Baltimore, MD",USA,-76.61,39.29,BWI,1,410,35
+Bamako,Mali,-7.99,12.65,BKO,223,,90
+Bandar Seri Begawan,Brunei,114.95,4.94,BWN,673,2,215
+Bangalore,India,77.59,12.98,BLR,91,80,190
+Bangkok,Thailand,100.52,13.73,BKK,66,2,205
+Bangui,Central African Republic,18.56,4.36,BGF,236,,113
+Banjul,Gambia,-16.59,13.46,BJL,220,,90
+Barcelona,Spain,2.17,41.38,BCN,34,93,105
+Bari,Italy,16.87,41.12,BRI,39,80,110
+"Baton Rouge, LA",USA,-91.15,30.45,BTR,1,504,20
+"Beaumont, TX",USA,-94.1,30.08,BPT,1,409,20
+Beijing,China,116.37,39.91,PEK,86,10,210
+Beirut,Lebanon,35.51,33.89,BEY,961,1,120
+Belem,Brazil,-48.48,-1.45,BEL,55,91,65
+Belfast,United Kingdom,-5.92,54.6,BFS,44,1232,85
+Belgrade,Yugoslavia,20.46,44.83,BEG,381,11,95
+Belmopan,Belize,-88.79,17.26,BCV,501,2,33
+Belo Horizonte,Brazil,-43.94,-19.92,BHZ,55,31,65
+Bergen,Norway,5.35,60.38,BGO,47,5,110
+"Berkeley, CA",USA,-122.27,37.87,JBK,1,510,4
+Berlin,Germany,13.29,52.48,THF,49,30,110
+Bern,Switzerland,7.44,46.95,BRN,41,31,110
+Birmingham,United Kingdom,-1.89,52.47,BHX,44,121,85
+"Birmingham, AL",USA,-86.8,33.52,BHM,1,205,20
+Bishkek,Kyrgyzstan,74.57,42.86,FRU,7,3312,180
+Bissau,Guinea-Bissau,-15.6,11.86,OXB,245,,90
+Bogotá,Colombia,-74.08,4.6,BOG,57,1,45
+"Boise, ID",USA,-116.2,43.61,BOI,1,208,10
+Bologna,Italy,11.34,44.5,BLQ,39,51,110
+Bonn,Germany,7.1,50.74,BNJ,49,228,110
+Bordeaux,France,-0.57,44.84,BOD,33,5,105
+"Boston, MA",USA,-71.06,42.35,BOS,1,617,35
+Bournemouth,United Kingdom,-1.88,50.73,BOH,44,1202,85
+Brasilia,Brazil,-47.55,-15.52,BSB,55,61,65
+Bratislava,Slovakia,17.11,48.15,BTS,421,7,95
+Brazzaville,Republic of the Congo,15.29,-4.27,BZV,242,,113
+Bremen,Germany,8.82,53.07,BRE,49,421,110
+Brest,France,23.69,52.1,BQT,33,2,105
+"Bridgeport, CT",USA,-73.2,41.16,BDR,1,203,35
+Bridgetown,Barbados,-59.61,13.11,BGI,1,246,55
+"Brisbane, QLD",Australia,153.02,-27.53,BNE,61,7,260
+Brno,Czech Republic,16.61,49.16,BRQ,420,5,95
+Brussels,Belgium,4.35,50.85,BRU,32,2,105
+Bucharest,Romania,26.1,44.43,OTP,40,1,115
+Budapest,Hungary,19.11,47.48,BUD,36,1,95
+Budapest,Hungary,19.06,47.51,BUD,36,1,95
+Buenos Aires,Argentina,-58.44,-34.6,AEP,54,1,70
+"Buffalo, NY",USA,-78.82,42.79,BUF,1,716,35
+Bujumbura,Burundi,29.36,-3.37,BJM,257,2,140
+Cagliari,Italy,9.11,39.23,CAG,39,70,110
+Cairo,Egypt,31.23,30.05,CAI,20,2,120
+"Calgary, AB",Canada,-113.98,51.01,YYC,1,403,10
+Cali,Colombia,-76.52,3.45,CLO,57,2,45
+Canberra,Australia,149.13,-35.33,CBR,61,62,255
+Cape Town,South Africa,18.48,-33.98,CPT,27,21,140
+Caracas,Venezuela,-66.9,10.5,CCS,58,2,55
+Cardiff,United Kingdom,-3.17,51.47,CWL,44,1222,85
+"Cedar Rapids, IA",USA,-91.64,42,CID,1,319,20
+"Charlotte, NC",USA,-80.84,35.23,CLT,1,704,35
+"Charlottetown, PE",Canada,-63.16,46.27,YYG,1,902,50
+Chengdu,China,104.06,30.65,CTU,86,28,210
+Chennai,India,80.25,13.07,MAA,91,44,190
+Chiba,Japan,140.11,35.58,NRT,81,43,235
+"Chicago, IL",USA,-87.65,41.85,ORD,1,312,20
+Chisinau,Moldova,28.84,47.03,KIV,373,2,125
+Chongqing,China,106.56,29.57,CKG,86,23,210
+"Cincinnati, OH",USA,-84.45,39.16,CVG,1,513,35
+"Cleveland, OH",USA,-81.69,41.49,CLE,1,216,35
+"Colorado Springs, CO",USA,-104.82,38.83,COS,1,719,10
+"Columbus, GA",USA,-84.98,32.46,CSG,1,706,35
+"Columbus, OH",USA,-82.99,39.96,CMH,1,614,35
+Conakry,Guinea,-13.67,9.55,CKY,224,,90
+Copenhagen,Denmark,12.58,55.7,CPH,45,,105
+Cork,Ireland,-8.46,51.9,ORK,353,21,85
+"Corpus Christi, TX",USA,-97.39,27.8,CRP,1,512,20
+Curitiba,Brazil,-49.28,-25.43,CWB,55,41,65
+Dakar,Senegal,-17.44,14.67,DKR,221,,90
+"Dallas, TX",USA,-96.77,32.79,DFW,1,214,20
+Damascus,Syria,36.3,33.51,DAM,963,11,130
+Dar es Salaam,Tanzania,39.28,-6.82,DAR,255,51,155
+"Darwin, NT",Australia,130.85,-12.43,DRW,61,89,245
+"Dayton, OH",USA,-84.17,39.74,DAY,1,513,35
+Delhi,India,77.46,28.73,DEL,91,11,190
+"Denver, CO",USA,-104.99,39.76,DEN,1,303,10
+"Des Moines, IA",USA,-93.6,41.6,DSM,1,515,20
+"Detroit, MI",USA,-83.04,42.34,DTW,1,313,35
+Dhaka,Bangladesh,90.41,23.71,DAC,880,2,195
+Dijon,France,5.04,47.32,DIJ,33,3,105
+Djibouti,Djibouti,43.15,11.59,JIB,253,,155
+Doha,Qatar,51.51,25.3,DOH,974,,150
+Dortmund,Germany,7.5,51.5,DTM,49,231,110
+Dresden,Germany,13.73,51.06,DRS,49,351,110
+Dublin,Ireland,-6.24,53.35,DUB,353,1,85
+Dushanbe,Tajikistan,68.78,38.57,DYU,7,3772,185
+Dusseldorf,Germany,6.73,51.2,DUS,49,211,110
+Edinburgh,United Kingdom,-3.2,55.94,EDI,44,131,85
+"Edmonton, AB",Canada,-113.5,53.55,YEG,1,403,10
+"El Paso, TX",USA,-106.48,31.75,ELP,1,915,20
+Erfurt,Germany,11.03,50.99,ERF,49,361,110
+"Eugene, OR",USA,-123.07,44.07,EUG,1,541,4
+"Evansville, IN",USA,-87.55,37.97,EVV,1,812,35
+Florence,Italy,11.25,43.77,FLR,39,55,110
+"Fort Defiance, AZ",USA,-109.16,35.9,N/A,1,520,15
+"Fort Lauderdale, FL",USA,-80.14,26.12,FLL,1,954,35
+"Fort Wayne, IN",USA,-85.12,41.13,FWA,1,219,40
+"Fort Worth, TX",USA,-97.32,32.72,DFW,1,817,20
+Fortaleza,Brazil,-38.52,-3.74,FOR,55,85,65
+Frankfurt,Germany,8.66,50.1,FRA,49,69,110
+Freetown,Sierra Leone,-13.23,8.48,FNA,232,22,90
+Freiburg,Germany,7.85,47.99,QFB,48,761,110
+"Fremont, CA",USA,-122,37.56,FET,1,510,4
+"Fresno, CA",USA,-119.77,36.74,FAT,1,209,4
+Fukuoka,Japan,130.4,33.56,FUK,81,92,235
+Gaborone,Botswana,25.91,-24.65,GBE,267,,140
+Galway,Ireland,-9.05,53.27,GWY,353,91,85
+Geneva,Switzerland,6.04,46.14,GVA,41,22,110
+Genova,Italy,8.93,44.42,GOA,39,10,110
+George Town,Cayman Islands,-81.4,19.33,CYB,1,345,45
+Georgetown,Guyana,-58.15,6.8,GEO,592,2,55
+Glasgow,United Kingdom,-4.24,55.84,GLA,44,141,85
+"Glendale, CA",USA,-118.25,34.14,JGX,1,818,4
+Granada,Spain,-3.6,37.18,GRX,34,958,105
+"Grand Rapids, MI",USA,-85.68,42.95,GRR,1,616,35
+Guadalajara,Mexico,-103.33,20.66,GDL,52,3,30
+Guangzhou,China,113.23,23.12,CAN,86,20,210
+Guatemala City,Guatemala,-90.55,14.61,GUA,502,2,33
+Haikou,China,110.34,20.04,HAK,86,898,210
+"Halifax, NS",Canada,-63.34,44.4,YHZ,1,902,50
+Hamburg,Germany,10.01,53.56,HAM,49,40,110
+Hamilton,Bermuda,-64.77,32.29,BDA,1,441,50
+Hannover,Germany,9.75,52.39,HAJ,49,511,110
+Hanoi,Vietnam,105.85,21.02,HAN,84,4,205
+Harare,Zimbabwe,31.05,-17.82,HRE,263,4,140
+Harbin,China,126.62,45.75,HRB,86,451,210
+"Hartford, CT",USA,-72.68,41.76,BDL,1,860,35
+Havana,Cuba,-82.37,23.13,HAV,53,7,35
+Helsinki,Finland,24.53,60.1,HEL,358,9,125
+Hiroshima,Japan,132.47,34.36,HIJ,81,82,235
+"Hobart, TAS",Australia,147.29,-42.84,HBA,61,2,265
+Hong Kong SAR,China,114.09,22.44,HKG,852,,210
+Honiara,Solomon Islands,159.94,-9.43,HIR,677,,280
+"Honolulu, HI",USA,-157.85,21.3,HNL,1,808,2
+"Houston, TX",USA,-95.36,29.76,IAH,1,713,20
+"Hull, PQ",Canada,-75.45,45.27,YND,1,819,35
+"Huntsville, AL",USA,-86.56,34.71,HSV,1,205,20
+"Indianapolis, IN",USA,-86.15,39.76,IND,1,317,40
+Irkutsk,Russia,104.25,52.33,IKT,7,3952,227
+Islamabad,Pakistan,73.09,33.71,ISB,92,51,185
+Istanbul,Turkey,28.96,41.01,IST,90,212,130
+"Jackson, MS",USA,-90.18,32.29,JAN,1,601,20
+"Jacksonville, FL",USA,-81.65,30.33,JAX,1,904,35
+Jakarta,Indonesia,106.81,-6.16,CGK,62,21,205
+Jerusalem,Israel,35.21,31.78,JRS,972,2,135
+Kabul,Afghanistan,69.16,34.53,KBL,93,,175
+Kampala,Uganda,32.57,0.32,EBB,256,41,155
+Kanazawa,Japan,136.65,36.56,KMQ,81,762,235
+"Kansas City, KS",USA,-94.62,39.11,KCK,1,913,20
+"Kansas City, MO",USA,-94.57,39.09,MCI,1,816,20
+Karachi,Pakistan,67.1,24.89,KHI,92,21,185
+Kathmandu,Nepal,85.31,27.71,KTM,977,1,193
+"Kelowna, BC",Canada,-119.27,49.52,YLW,1,250,4
+Khartoum,Sudan,32.52,15.58,KRT,249,11,140
+Kiev,Ukraine,30.52,50.43,IEV,380,44,125
+Kigali,Rwanda,30.06,-1.95,KGL,250,,140
+Kingston,Jamaica,-76.79,17.96,KIN,1,876,40
+Kinshasa,Democratic Republic of the Congo,15.32,-4.31,FIH,243,,113
+"Knoxville, TN",USA,-83.92,35.96,TYS,1,423,35
+Kobe,Japan,135.19,34.68,KIX,81,78,235
+Kochi,Japan,133.54,33.55,KCZ,81,888,235
+Kolkata (Calcutta),India,88.32,22.51,CCU,91,33,190
+Krasnoyarsk,Russia,93.06,56.03,KJA,7,3912,207
+Kuala Lumpur,Malaysia,101.69,3.17,KUL,60,3,215
+Kuwait,Kuwait,47.97,29.37,KWI,965,,150
+Kwangju,Korea,126.91,35.15,KWJ,82,62,230
+Kyoto,Japan,135.77,34.98,KIX,81,75,235
+La Coruña,Spain,-8.4,43.36,LCG,34,981,105
+La Paz,Bolivia,-68.14,-16.5,LPB,591,2,55
+"Lansing, MI",USA,-84.56,42.72,LAN,1,517,35
+"Laredo, TX",USA,-99.49,27.51,LRD,1,956,20
+"Las Vegas, NV",USA,-115.13,36.17,LAS,1,702,4
+Leipzig,Germany,12.4,51.35,LEJ,49,341,110
+"Lexington, KY",USA,-84.5,38.04,LEX,1,606,35
+Lhasa,China,91.13,29.65,LXA,86,891,210
+Libreville,Gabon,9.45,0.39,LBV,241,,113
+Lille,France,3.04,50.63,LIL,33,3,105
+Lilongwe,Malawi,33.77,-13.98,LLW,265,,140
+Lima,Peru,-77.05,-12.04,LIM,51,1,45
+Limerick,Ireland,-8.62,52.67,LMK,353,61,85
+Limoges,France,1.26,45.83,LIG,33,5,105
+"Lincoln, NE",USA,-96.66,40.8,LNK,1,402,20
+Lisbon,Portugal,-9.19,38.72,LIS,351,1,85
+"Little Rock, AR",USA,-92.28,34.74,LIT,1,501,20
+Liverpool,United Kingdom,-2.96,53.39,LPL,44,151,85
+Ljubljana,Slovenia,14.51,46.06,LJU,386,61,95
+Lomé,Togo,1.23,6.13,LFW,228,,90
+London,United Kingdom,-0.06,51.51,LHR,44,171,85
+Londonderry,United Kingdom,-7.31,54.99,LDY,44,1504,85
+"Long Beach, CA",USA,-118.18,33.76,LGB,1,562,4
+"Los Angeles, CA",USA,-118.24,34.05,LAX,1,213,4
+"Louisville, KY",USA,-85.75,38.25,LJC,1,502,35
+Luanda,Angola,13.24,-8.81,LAD,244,2,113
+"Lubbock, TX",USA,-101.85,33.57,LBB,1,806,20
+Lusaka,Zambia,28.29,-15.42,LUN,260,1,140
+Luxembourg,Luxembourg,6.13,49.6,LUX,352,,105
+Lyon,France,4.83,45.76,LYS,33,4,105
+"Madison, WI",USA,-89.4,43.07,MSN,1,608,20
+Madrid,Spain,-3.68,40.4,MAD,34,91,105
+Malabo,Equatorial Guinea,8.78,3.75,SSG,240,9,113
+Malaga,Spain,-4.42,36.72,AGP,34,95,105
+Malé,Maldives,73.5,4.17,MLE,960,,190
+Managua,Nicaragua,-86.27,12.15,MGA,505,2,33
+Manama,Bahrain,50.58,26.22,BAH,973,,150
+Manaus,Brazil,-60.01,-3.13,MAO,55,92,55
+Manchester,United Kingdom,-2.23,53.47,MAN,44,161,85
+Manila,Philippines,120.98,14.6,MNL,63,2,215
+Maputo,Mozambique,32.57,-25.96,MPM,258,1,140
+Maracaibo,Venezuela,-71.64,10.65,MAR,58,61,55
+Marseilles,France,5.36,43.29,MRS,33,4,105
+Maseru,Lesotho,27.49,-29.31,MSU,266,,140
+Masqat,Oman,58.54,23.6,MCT,968,,165
+Mbabane,Swaziland,31.14,-26.32,QMN,268,,140
+Medellin,Colombia,-75.58,6.25,MDE,57,4,45
+"Melbourne, VIC",Australia,145.03,-37.88,MEL,61,3,255
+"Memphis, TN",USA,-90.04,35.14,MEM,1,901,20
+Metz,France,6.18,49.12,MZM,33,3,105
+Mexico City,Mexico,-99.14,19.45,MEX,52,5,30
+"Miami, FL",USA,-80.19,25.77,MIA,1,305,35
+Milan,Italy,9.18,45.47,MXP,39,2,110
+"Milwaukee, WI",USA,-87.9,43.03,MKE,1,414,20
+"Minneapolis, MN",USA,-93.26,44.98,MSP,1,612,20
+Minsk,Belarus,27.6,53.9,MSQ,375,172,130
+"Mobile, AL",USA,-88.04,30.69,MOB,1,334,20
+Mogadishu,Somalia,45.34,2.04,MGQ,252,1,155
+Monaco,Monaco,7.41,43.74,MCM,377,,105
+Monrovia,Liberia,-10.8,6.3,MLW,231,,90
+Monterrey,Mexico,-100.3,25.68,MTY,52,83,30
+Montevideo,Uruguay,-56.17,-34.9,MVD,598,2,70
+"Montreal, PQ",Canada,-73.34,45.3,YUL,1,514,35
+Morioka,Japan,141.14,39.69,HNA,81,196,235
+Moscow,Russia,37.58,55.74,SVO,7,95,145
+Mumbai,India,72.82,19.07,BOM,91,22,190
+Munich,Germany,11.57,48.13,MUC,49,89,110
+Murmansk,Russia,33.08,68.97,MMK,7,8152,145
+Nagano,Japan,138.19,36.65,MMJ,81,262,235
+Nagasaki,Japan,129.87,32.71,NGS,81,958,235
+Nagoya,Japan,136.88,35.14,NGO,81,52,235
+Nairobi,Kenya,36.81,-1.28,NBO,254,2,155
+Nanjing,China,118.78,32.04,NKG,86,25,210
+Naples,Italy,14.26,40.83,NAP,39,81,110
+"Nashville, TN",USA,-86.78,36.16,BNA,1,615,20
+Nassau,Bahamas,-77.34,25.05,MAS,1,242,35
+N'Djamena,Chad,15.05,12.1,NDJ,235,51,113
+"New Orleans, LA",USA,-90.07,29.95,MSY,1,504,20
+"New York, NY",USA,-73.99,40.74,JFK,1,212,35
+"Newark, NJ",USA,-74.17,40.73,EWR,1,201,35
+Niamey,Niger,2.12,13.51,NIM,227,,113
+Nicosia,Cyprus,33.36,35.18,NIC,357,2,130
+Norwich,United Kingdom,1.29,52.64,NWI,44,1603,85
+Nouakchott,Mauritania,-15.95,18.1,NKC,222,,90
+Novosibirsk,Russia,82.93,55.02,OVB,7,3832,201
+Nuku'alofa,Tonga,-175.2,-21.13,TBU,676,,300
+Nuuk,Greenland,-51.72,64.19,GOH,299,,73
+"Oakland, CA",USA,-122.21,37.77,OAK,1,510,4
+"Oklahoma City, OK",USA,-97.52,35.46,OKC,1,405,20
+"Omaha, NE",USA,-95.93,41.25,OMA,1,402,20
+"Orlando, FL",USA,-81.38,28.53,ORL,1,407,35
+Osaka,Japan,135.47,34.67,KIX,81,6,235
+"Oshawa, ON",Canada,-78.51,43.54,YOO,1,905,35
+Oslo,Norway,10.73,59.91,FBU,47,2,110
+"Ottawa, ON",Canada,-75.4,45.25,YOW,1,613,35
+Ouagadougou,Burkina Faso,-1.53,12.36,OUA,226,,90
+"Overland Park, KS",USA,-94.66,39.02,MCI,1,913,20
+Oviedo,Spain,-5.84,43.37,OVD,34,98,105
+Palermo,Italy,13.36,38.12,PMO,39,91,110
+Palma de Mallorca,Spain,2.65,39.57,PMI,34,971,105
+Panama City,Panama,-79.5,9.01,PTY,507,,45
+Paramaribo,Surinam,-55.17,5.83,PBM,597,,70
+Paris,France,2.35,48.86,CDG,33,1,105
+"Pasadena, CA",USA,-118.14,34.14,JPD,1,818,4
+"Pasadena, TX",USA,-95.2,29.69,JPD,1,713,20
+"Peoria, IL",USA,-89.58,40.69,PIA,1,309,20
+"Perth, WA",Australia,115.76,-31.93,PER,61,9,225
+Perugia,Italy,12.38,43.11,PEG,39,75,110
+"Philadelphia, PA",USA,-75.16,39.95,PHL,1,215,35
+Phnom Penh,Cambodia,104.92,11.56,PNH,855,23,205
+"Phoenix, AZ",USA,-112.07,33.44,PHX,1,602,15
+Pisa,Italy,10.41,43.71,PSA,39,50,110
+"Pittsburgh, PA",USA,-80,40.44,PIT,1,412,35
+Plymouth,United Kingdom,-4.14,50.37,PLH,44,1752,85
+Port Louis,Mauritius,57.5,-20.17,MRU,230,,165
+Port Moresby,Papua New Guinea,147.19,-9.48,POM,675,,275
+Port-au-Prince,Haiti,-72.33,18.53,PAP,509,,45
+"Portland, OR",USA,-122.67,45.52,PDX,1,503,4
+Porto,Portugal,-8.61,41.16,OPO,351,2,85
+Porto Alegre,Brazil,-51.22,-30.04,POA,55,51,65
+Port-of-Spain,Trinidad and Tobago,-61.51,10.67,POS,1,868,55
+Porto-Novo,Benin,2.63,6.48,COO,229,,113
+Prague,Czech Republic,14.44,50.07,PRG,420,2,95
+Praia,Cape Verde,-23.5,14.88,CPV,238,,83
+Pretoria,South Africa,28.22,-25.72,PRY,27,12,140
+"Providence, RI",USA,-71.41,41.82,PVD,1,401,35
+Puebla de Zaragoza,Mexico,-98.21,19.05,PBC,52,22,30
+Pusan,Korea,129.04,35.1,PUS,82,51,230
+Pyongyang,North Korea,125.77,39.01,FNJ,850,2,230
+"Quebec City, PQ",Canada,-71.13,46.49,YQB,1,418,35
+Quito,Ecuador,-78.5,-0.22,UIO,593,2,45
+Rabat,Morocco,-6.83,34.02,RBA,212,7,90
+"Raleigh, NC",USA,-78.63,35.77,RDU,1,919,35
+Recife,Brazil,-34.9,-8.05,REC,55,81,65
+"Redmond, WA",USA,-122.12,47.66,SEA,1,425,4
+Reggio Calabria,Italy,15.65,38.11,REG,39,965,110
+"Regina, SK",Canada,-104.3,50.3,YQR,1,306,25
+Reykjavík,Iceland,-21.94,64.14,KEF,354,1,90
+"Richmond, VA",USA,-77.46,37.55,RIC,1,804,35
+Riga,Latvia,24.1,56.95,RIX,371,2,125
+Rio de Janeiro,Brazil,-43.17,-22.9,GIG,55,21,65
+Riyadh,Saudi Arabia,46.74,24.64,RUH,966,1,150
+"Rockford, IL",USA,-89.08,42.27,RFD,1,815,20
+Rome,Italy,12.49,41.89,FCO,39,6,110
+Roseau,Dominica,-61.39,15.3,DOM,1,767,55
+"Roswell, NM",USA,-104.31,33.23,ROW,1,505,10
+Rouen,France,1.09,49.44,URO,33,2,105
+"Sacramento, CA",USA,-121.49,38.58,SAC,1,916,4
+"Saint John, NB",Canada,-65.57,45.2,YSJ,1,506,50
+"Saint Louis, MO",USA,-90.19,38.62,STL,1,314,20
+"Saint Paul, MN",USA,-93.09,44.94,STP,1,612,20
+"Salt Lake City, UT",USA,-111.86,40.75,SLC,1,801,10
+Salvador,Brazil,-38.5,-12.97,SSA,55,71,65
+Salzburg,Austria,13.05,47.8,SZG,43,662,110
+"San Antonio, TX",USA,-98.49,29.42,SAT,1,210,20
+"San Bernardino, CA",USA,-117.3,34.12,SBT,1,909,4
+"San Diego, CA",USA,-117.15,32.71,SAN,1,619,4
+"San Francisco, CA",USA,-122.41,37.77,SFO,1,415,4
+San José,Costa Rica,-84.07,9.93,CRI,506,,33
+"San Jose, CA",USA,-121.89,37.33,SJC,1,408,4
+San Salvador,El Salvador,-89.2,13.7,SAL,503,,33
+Sana'a,Yemen,44.21,15.36,SAH,967,1,155
+"Santa Ana, CA",USA,-117.85,33.75,SNA,1,714,4
+"Santa Rosa, CA",USA,-122.75,38.44,STS,1,707,4
+Santander,Spain,-3.8,43.47,SDR,34,942,105
+Santiago,Chile,-70.67,-33.45,SCL,56,2,56
+Santo Domingo,Dominican Republic,-69.89,18.49,SDQ,1,809,55
+Sao Paulo,Brazil,-46.58,-23.55,GRU,55,11,65
+Sapporo,Japan,141.38,43.06,CTS,81,11,235
+Sarajevo,Bosnia and Herzegovina,18.42,43.87,SJJ,387,71,100
+"Saskatoon, SK",Canada,-106.36,52.09,YXE,1,306,25
+"Savannah, GA",USA,-81.1,32.08,SAV,1,912,35
+"Seattle, WA",USA,-122.33,47.6,SEA,1,206,4
+Sendai,Japan,140.91,38.25,SDJ,81,22,235
+Seoul,Korea,126.97,37.56,SEL,82,2,230
+Sevilla,Spain,-5.99,37.38,SVQ,34,95,105
+Shanghai,China,121.47,31.22,SHA,86,21,210
+"Shreveport, LA",USA,-93.74,32.5,SHV,1,318,20
+"Simi Valley, CA",USA,-118.79,34.27,BUR,1,805,4
+Singapore,Singapore,103.84,1.28,SIN,65,,215
+"Sioux Falls, SD",USA,-96.7,43.55,FSD,1,605,20
+Skopje,F.Y.R.O. Macedonia,21.47,42,SKP,389,1 91,100
+Sofia,Bulgaria,23.33,42.71,SOF,359,2,130
+"South Bend, IN",USA,-86.25,41.68,SBN,1,219,40
+"Spokane, WA",USA,-117.42,47.65,GEG,1,509,4
+"Springfield, IL",USA,-89.64,39.8,SPI,1,217,20
+"Springfield, MA",USA,-72.59,42.1,BDL,1,413,35
+"Springfield, MO",USA,-93.29,37.21,SGF,1,417,20
+Sri Jayawardenepura,Sri Lanka,79.91,6.89,CMB,94,1,200
+"St. Catharines, ON",Canada,-79.14,43.11,YCM,1,905,35
+"St. John's, NF",Canada,-52.42,47.04,YYT,1,709,60
+St. Petersburg,Russia,30.29,59.93,LED,7,812,145
+"St. Petersburg, FL",USA,-82.67,27.77,PIE,1,813,35
+Stockholm,Sweden,18.03,59.29,ARN,46,8,110
+"Stockton, CA",USA,-121.28,37.95,SCK,1,209,4
+Strasbourg,France,7.77,48.58,SXB,33,3,105
+Stuttgart,Germany,9.18,48.78,STR,49,711,110
+Sucre,Bolivia,-65.26,-19.04,SRE,591,64,55
+"Sunnyvale, CA",USA,-122.02,37.37,SJC,1,408,4
+Suva,Fiji Islands,178.46,-18.13,SUV,679,,285
+"Sydney, NSW",Australia,151.12,-33.96,SYD,61,2,255
+"Syracuse, NY",USA,-76.14,43.04,SYR,1,315,35
+Taejon,Korea,127.43,36.33,QTW,82,42,230
+Taipei,Taiwan,121.5,25.03,TPE,886,2,220
+Tallinn,Estonia,24.75,59.42,TLL,372,2,125
+"Tampa, FL",USA,-82.45,27.94,TPA,1,813,35
+Taranto,Italy,17.21,40.5,TAR,39,99,110
+T'bilisi,Georgia,44.78,41.72,TBS,995,32,170
+Tegucigalpa,Honduras,-87.21,14.09,TGU,504,,33
+Tehran,Iran,51.41,35.68,THR,98,21,160
+Tel Aviv,Israel,34.76,32.07,TLV,972,3,135
+The Hague,Netherlands,4.32,52.09,HAG,31,70,110
+Thimphu,Bhutan,89.67,27.45,PBH,975,,195
+"Thunder Bay, ON",Canada,-89.12,48.27,YQT,1,807,35
+Tirana,Albania,19.83,41.33,TIA,355,42,100
+Tokyo,Japan,139.76,35.67,NRT,81,3,235
+"Toledo, OH",USA,-83.55,41.66,TOL,1,419,35
+Torino,Italy,7.68,45.07,TRN,39,11,110
+"Toronto, ON",Canada,-79.4,43.66,YYZ,1,416,35
+"Torrance, CA",USA,-118.33,33.83,TOA,1,310,4
+Toshkent,Uzbekistan,69.3,41.31,TAS,7,3712,185
+Toulouse,France,1.43,43.6,TLS,33,5,105
+Tripoli,Libya,13.2,32.89,TIP,218,21,113
+"Tucson, AZ",USA,-110.92,32.22,TUS,1,520,15
+"Tulsa, OK",USA,-95.99,36.15,TUL,1,918,20
+Tunis,Tunisia,10.18,36.81,TUN,216,1,113
+Ulaanbaatar,Mongolia,106.91,47.93,ULN,976,1,227
+Urumqi,China,87.59,43.79,URC,86,991,210
+Vaduz,Liechtenstein,9.54,47.13,QVU,41,75,110
+Valencia,Spain,-0.36,39.47,VLC,34,96,105
+Valletta,Malta,14.52,35.9,MLA,356,,110
+"Vancouver, BC",Canada,-123.04,49.15,YVR,1,604,4
+Vatican City,Vatican City,12.45,41.9,FCO,39,6,110
+Venice,Italy,12.32,45.44,VCE,39,41,110
+Veracruz,Mexico,-96.13,19.19,VER,52,29,30
+Victoria,Seychelles,55.45,-4.62,SEZ,248,,165
+Vienna,Austria,16.22,48.13,VIE,43,1,110
+Vientiane,Laos,102.63,17.94,VTE,856,21,205
+Vilnius,Lithuania,25.31,54.68,VNO,370,2,100
+Vladivostok,Russia,131.9,43.13,VVO,7,4232,270
+Volgograd,Russia,44.42,48.75,VOG,7,8442,145
+"Waco, TX",USA,-97.08,31.33,ACT,1,254,20
+Warsaw,Poland,21.02,52.24,WAW,48,22,100
+"Washington, DC",USA,-77.04,38.89,DUL,1,202,35
+Wellington,New Zealand,174.77,-41.26,WLG,64,4,290
+"Whitehorse, YT",Canada,-135.04,60.43,YXY,1,403,4
+Windhoek,Namibia,17.08,-22.56,WDH,264,61,113
+"Winnipeg, MB",Canada,-97.07,49.54,YWG,1,204,20
+Wuhan,China,114.28,30.55,WUH,86,27,210
+Xian,China,108.88,34.27,SIA,86,29,210
+Yakutsk,Russia,129.72,62.03,YKS,7,411,240
+Yangon,Myanmar,96.15,16.78,RGN,95,1,203
+Yaoundé,Cameroon,11.52,3.87,YAO,237,,113
+Yekaterinburg,Russia,60.61,56.85,SVX,7,3432,180
+"Yellowknife, NT",Canada,-114.25,62.28,YZF,1,403,10
+Yerevan,Armenia,44.54,40.21,EVN,374,2,170
+Yokohama,Japan,139.63,35.45,NRT,81,45,235
+Zagreb,Croatia,15.96,45.81,ZAG,385,1,100
+Zaragoza,Spain,-0.89,41.65,ZAZ,34,976,105
+Zurich,Switzerland,8.32,47.22,ZRH,41,1,110
