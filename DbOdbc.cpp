@@ -921,7 +921,8 @@ BOOL COdbcCommand::Execute(IDbRecordset* pRecordset/*=NULL*/)
    if( rc == SQL_NEED_DATA ) {
       SQLPOINTER pParam;
       while( (rc = ::SQLParamData(m_hstmt, &pParam))==SQL_NEED_DATA ) {
-         for( short i=0; i<m_nParams; i++ ) {
+        short i=0;
+         for( ; i<m_nParams; i++ ) {
             if( m_params[i].pValue==pParam ) {
                switch( m_params[i].type ) {
                case SQL_C_TIMESTAMP:

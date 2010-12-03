@@ -101,8 +101,8 @@ BOOL COledbDatabase::Open(HWND hWnd, LPCTSTR pstrConnectionString, LPCTSTR pstrU
    }
    else 
    {
-      TCHAR szPrefix[12] = { 0 };
-      ::lstrcpyn(szPrefix, pstrConnectionString, (sizeof(szPrefix) / sizeof(TCHAR)) - 1);
+      TCHAR szPrefix[] = _T("Provider=");
+      ::lstrcpyn(szPrefix, pstrConnectionString, (sizeof(szPrefix) / sizeof(TCHAR)));
       if( ::lstrcmpi(szPrefix, _T("Provider=")) == 0 ) 
       {
          // Connect using OLE DB connection string

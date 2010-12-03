@@ -33,7 +33,7 @@
 #include <msdaguid.h>      // OLE DB Root Enumerator
 #include <msdasql.h>       // MSDASQL - Default provider
 #pragma comment(lib, "oledb.lib")
-#pragma comment(lib, "oledbd.lib")
+//#pragma comment(lib, "oledbd.lib")
 
 #include "DbBase.h"
 

@@ -14,42 +14,8 @@
 
 // To remove SQL Lite from the test, comment the following line out
 // and remove the cSqlite.cpp from the project...
-#include "DbSqlite2.h"
-#include "DbSqlite3.h"
-
-
-template< class T >
-class CAutoPtr
-{
-public:
-   T* m_p;
-   CAutoPtr(T* p) : m_p(p)
-   {
-   }
-   ~CAutoPtr()
-   {
-      delete m_p;
-   }
-   operator T*() const
-   {
-      return (T*)m_p;
-   }
-   T& operator*() const
-   {
-      _ASSERTE(m_p!=NULL);
-      return *m_p;
-   }
-   T** operator&()
-   {
-      _ASSERTE(m_p==NULL);
-      return &m_p;
-   }
-   T* operator->() const
-   {
-      _ASSERTE(m_p!=NULL);
-      return m_p;
-   }
-};
+//#include "DbSqlite2.h"
+//#include "DbSqlite3.h"
 
 
 void OdbcTest(LPCTSTR pstrConnection)
@@ -81,7 +47,7 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
 {
    pSystem->Initialize();
 
-   CAutoPtr<IDbDatabase> pDb = pSystem->CreateDatabase();
+   CAutoPtr<IDbDatabase> pDb(pSystem->CreateDatabase());
    BOOL bRes;
    bRes = pDb->Open(NULL, pstrConnection, _T(""), _T(""), DB_OPEN_READ_ONLY);
    if( !bRes ) {
@@ -91,8 +57,8 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
       return;
    }
 
-   CAutoPtr<IDbRecordset> pRec = pSystem->CreateRecordset(pDb);
-   bRes = pRec->Open(_T("SELECT ProductID,ProductName,UnitPrice,Discontinued FROM Products ORDER BY ProductID"), DB_OPEN_TYPE_DYNASET);
+   CAutoPtr<IDbRecordset> pRec(pSystem->CreateRecordset(pDb));
+   bRes = pRec->Open(_T("ProductID,ProductName,UnitPrice,Discontinued FROM Products ORDER BY ProductID"), DB_OPEN_TYPE_DYNASET);
    
    DWORD dwCnt = pRec->GetRowCount();
    dwCnt;
@@ -128,7 +94,7 @@ void Test2(IDbSystem* pSystem, LPCTSTR pstrConnection)
 {
    pSystem->Initialize();
 
-   CAutoPtr<IDbDatabase> pDb = pSystem->CreateDatabase();
+   CAutoPtr<IDbDatabase> pDb(pSystem->CreateDatabase());
    BOOL bRes;
    bRes = pDb->Open(NULL, pstrConnection, _T(""), _T(""), DB_OPEN_READ_ONLY);
    if( !bRes ) {
@@ -138,12 +104,12 @@ void Test2(IDbSystem* pSystem, LPCTSTR pstrConnection)
       return;
    }
 
-   CAutoPtr<IDbCommand> pCmd = pSystem->CreateCommand(pDb);
+   CAutoPtr<IDbCommand> pCmd(pSystem->CreateCommand(pDb));
    pCmd->Create(_T("SELECT ProductID,ProductName FROM Products WHERE ProductID=? AND ProductName=?"));
    long lVal = 2L;
    pCmd->SetParam(0, &lVal);
    pCmd->SetParam(1, _T("Chang"));
-   CAutoPtr<IDbRecordset> pRec = pSystem->CreateRecordset(pDb);
+   CAutoPtr<IDbRecordset> pRec(pSystem->CreateRecordset(pDb));
    pCmd->Execute(pRec);
    while( !pRec->IsEOF() ) {
       long lID;
@@ -192,11 +158,12 @@ int main(int /*argc*/, char* /*argv[]*/)
    LPCTSTR pstrDSN = _T("Northwind");
    OdbcTest(pstrDSN);
 
-   CAutoPtr<IDbSystem> pODBC = new COdbcSystem();
+   pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=Northwind");
+   CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
    Test1(pODBC, pstrDSN);
    Test2(pODBC, pstrDSN);
 
-   CAutoPtr<IDbSystem> pOLEDB = new COledbSystem();
+   CAutoPtr<IDbSystem> pOLEDB(new COledbSystem());
    Test1(pOLEDB, pstrDSN);
    Test2(pOLEDB, pstrDSN);
 
