@@ -307,6 +307,30 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
+				RelativePath="..\include\DbBase.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\DbCsv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\DbOdbc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\DbOledb.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\DbSqlite2.h"
+				>
+			</File>
+			<File
+				RelativePath="..\include\DbSqlite3.h"
+				>
+			</File>
+			<File
 				RelativePath=".\StdAfx.h"
 				>
 			</File>
