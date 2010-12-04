@@ -152,7 +152,7 @@ void CsvTest(LPCTSTR pstrFilename)
 
 int main(int /*argc*/, char* /*argv[]*/)
 {
-   LPCTSTR pstrCSV = _T("..\\citylist.csv");
+   LPCTSTR pstrCSV = _T("../../data/citylist.csv");
    CsvTest(pstrCSV);
 
    LPCTSTR pstrDSN = _T("Northwind");

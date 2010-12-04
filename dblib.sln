@@ -1,6 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DbTest", "DbTest.vcproj", "{CA2002E9-4130-4511-BB1D-253FDC068FB8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dblib", "libsrc\Dblib.vcproj", "{CA2002E9-4130-4511-BB1D-253FDC068FB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dbtest", "test\DbTest.vcproj", "{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA2002E9-4130-4511-BB1D-253FDC068FB8} = {CA2002E9-4130-4511-BB1D-253FDC068FB8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,12 @@ Global
 		{CA2002E9-4130-4511-BB1D-253FDC068FB8}.Release UNICODE|Win32.Build.0 = Release UNICODE|Win32
 		{CA2002E9-4130-4511-BB1D-253FDC068FB8}.Release|Win32.ActiveCfg = Release|Win32
 		{CA2002E9-4130-4511-BB1D-253FDC068FB8}.Release|Win32.Build.0 = Release|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Debug|Win32.Build.0 = Debug|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Release UNICODE|Win32.ActiveCfg = Release UNICODE|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Release UNICODE|Win32.Build.0 = Release UNICODE|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Release|Win32.ActiveCfg = Release|Win32
+		{653E5555-1CB0-4803-8C84-DF8EBB4DD2CE}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
