@@ -152,20 +152,31 @@ void CsvTest(LPCTSTR pstrFilename)
 
 int main(int /*argc*/, char* /*argv[]*/)
 {
-   LPCTSTR pstrCSV = _T("../../data/citylist.csv");
-   CsvTest(pstrCSV);
+    LPCTSTR pstrCSV = _T("../../data/citylist.csv");
 
-   LPCTSTR pstrDSN = _T("Northwind");
-   OdbcTest(pstrDSN);
+    printf("Testing csv...");
+    CsvTest(pstrCSV);
+    printf("Done.\n");
 
-   pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=Northwind");
-   CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
-   Test1(pODBC, pstrDSN);
-   Test2(pODBC, pstrDSN);
+    LPCTSTR pstrDSN = _T("Northwind");
 
-   CAutoPtr<IDbSystem> pOLEDB(new COledbSystem());
-   Test1(pOLEDB, pstrDSN);
-   Test2(pOLEDB, pstrDSN);
+    printf("Testing ODBC...");
+    OdbcTest(pstrDSN);
+    printf("Done.\n");
 
-   return 0;
+    pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=Northwind");
+
+    printf("Testing ODBC...");
+    CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
+    Test1(pODBC, pstrDSN);
+    Test2(pODBC, pstrDSN);
+    printf("Done.\n");
+
+    printf("Testing OLEDB...");
+    CAutoPtr<IDbSystem> pOLEDB(new COledbSystem());
+    Test1(pOLEDB, pstrDSN);
+    Test2(pOLEDB, pstrDSN);
+    printf("Done.\n");
+
+    return 0;
 }
