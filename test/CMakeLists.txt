@@ -5,9 +5,7 @@ INCLUDE_DIRECTORIES(${dblib_SOURCE_DIR}/include )
 LINK_DIRECTORIES(${dblib_BINARY_DIR} )
 
 # declare executables
-FOREACH(PROGRAM dbtest)
-  ADD_EXECUTABLE(${PROGRAM} ${PROGRAM})
-ENDFOREACH(PROGRAM)
+ADD_EXECUTABLE(dbtest dbtest.cpp)
 
 # make sure executables are linked to the corresponding libraries
 FOREACH(PROGRAM dbtest)
