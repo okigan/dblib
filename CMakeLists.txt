@@ -8,3 +8,4 @@ option (USE_SQLITE_3 "Use SQLite version 3" OFF)
 INCLUDE_DIRECTORIES(${dblib_SOURCE_DIR}/include )
 
 SUBDIRS(libsrc test)
+
