@@ -6,11 +6,11 @@
 // The ODBC / OLEDB test requires a pre-created "Northwind" datasource.
 // Usually you would just create an ODBC MS Access entry for the Northwind.MDB
 // database that comes with many Microsoft tools (MS Access & VB6 to name a few).
-#include "DbOdbc.h"
-#include "DbOledb.h"
+#include "dblib/DbOdbc.h"
+#include "dblib/DbOledb.h"
 
 // The CSV test loads a sample file located in the source folder
-#include "DbCsv.h"
+#include "dblib/DbCsv.h"
 
 // To remove SQL Lite from the test, comment the following line out
 // and remove the cSqlite.cpp from the project...
@@ -58,7 +58,7 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
    }
 
    CAutoPtr<IDbRecordset> pRec(pSystem->CreateRecordset(pDb));
-   bRes = pRec->Open(_T("ProductID,ProductName,UnitPrice,Discontinued FROM Products ORDER BY ProductID"), DB_OPEN_TYPE_DYNASET);
+   bRes = pRec->Open(_T("SELECT * FROM [dbo].[Study]"), DB_OPEN_TYPE_DYNASET);
    
    DWORD dwCnt = pRec->GetRowCount();
    dwCnt;
@@ -160,17 +160,17 @@ int main(int /*argc*/, char* /*argv[]*/)
 
     LPCTSTR pstrDSN = _T("Northwind");
 
-    printf("Testing ODBC...");
-    OdbcTest(pstrDSN);
-    printf("Done.\n");
+    //printf("Testing ODBC...");
+    //OdbcTest(pstrDSN);
+    //printf("Done.\n");
 
-    pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=Northwind");
+    pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=dcmqrdb");
 
-    printf("Testing ODBC...");
-    CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
-    Test1(pODBC, pstrDSN);
-    Test2(pODBC, pstrDSN);
-    printf("Done.\n");
+    //printf("Testing ODBC...");
+    //CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
+    //Test1(pODBC, pstrDSN);
+    //Test2(pODBC, pstrDSN);
+    //printf("Done.\n");
 
     printf("Testing OLEDB...");
     CAutoPtr<IDbSystem> pOLEDB(new COledbSystem());

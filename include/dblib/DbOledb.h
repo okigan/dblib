@@ -181,12 +181,6 @@ public:
    BOOL GetField(short iIndex, bool& pData);
    BOOL GetField(short iIndex, LPTSTR pData, UINT cchMax);
    BOOL GetField(short iIndex, SYSTEMTIME& pSt);
-#if defined(__ATLSTR_H__) || defined(_WTL_USE_CSTRING)
-   BOOL GetField(short iIndex, CString& pData);
-#endif // __ATLSTR_H__
-#if defined(_STRING_)
-   BOOL GetField(short iIndex, std::string& pData);
-#endif // __ATLSTR_H__
    BOOL GetColumnName(short iIndex, LPTSTR pstrName, UINT cchMax);
    short GetColumnType(short iIndex);
    short GetColumnIndex(LPCTSTR pstrName) const;
@@ -200,6 +194,13 @@ public:
    BOOL MoveAbs(DWORD dwPos);
    DWORD GetRowNumber();
    BOOL NextResultset();
+
+#if defined(__ATLSTR_H__) || defined(_WTL_USE_CSTRING)
+   BOOL GetField(short iIndex, CString& pData);
+#endif // __ATLSTR_H__
+#if defined(_STRING_)
+   BOOL GetField(short iIndex, std::string& pData);
+#endif // __ATLSTR_H__
 
 public:
    BOOL Attach(IRowset* pRowset);

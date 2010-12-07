@@ -118,12 +118,6 @@ public:
    virtual BOOL GetField(short iIndex, bool &Data) = 0;
    virtual BOOL GetField(short iIndex, LPTSTR pData, UINT cchMax) = 0;
    virtual BOOL GetField(short iIndex, SYSTEMTIME& Data) = 0;
-#if defined(__ATLSTR_H__) || defined(_WTL_USE_CSTRING)
-   virtual BOOL GetField(short iIndex, CString& pData) = 0;
-#endif // __ATLSTR_H__
-#if defined(_STRING_)
-   virtual BOOL GetField(short iIndex, std::string& pData) = 0;
-#endif // __ATLSTR_H__
    virtual DWORD GetColumnSize(short iIndex) = 0;
    virtual BOOL GetColumnName(short iIndex, LPTSTR pstrName, UINT cchMax) = 0;
    virtual short GetColumnType(short iIndex) = 0;
@@ -137,6 +131,14 @@ public:
    virtual BOOL MoveBottom() = 0;
    virtual DWORD GetRowNumber() = 0;
    virtual BOOL NextResultset() = 0;
+
+//#if defined(__ATLSTR_H__) || defined(_WTL_USE_CSTRING)
+//   virtual BOOL GetField(short iIndex, CString& pData) = 0;
+//#endif // __ATLSTR_H__
+//#if defined(_STRING_)
+//   virtual BOOL GetField(short iIndex, std::string& pData) = 0;
+//#endif // __ATLSTR_H__
+
 };
 
 class IDbCommand

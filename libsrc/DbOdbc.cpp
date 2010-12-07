@@ -1,6 +1,6 @@
 
 #include "stdafx.h"
-#include "DbOdbc.h"
+#include "dblib/DbOdbc.h"
 
 #ifndef _ASSERTE
    #define _ASSERTE(x)
