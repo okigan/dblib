@@ -155,12 +155,14 @@ public:
    virtual BOOL SetParam(short iIndex, const float* pData) = 0;
    virtual BOOL SetParam(short iIndex, const double* pData) = 0;
    virtual BOOL SetParam(short iIndex, const SYSTEMTIME* pData, short iType = DB_TYPE_TIMESTAMP) = 0;
+#if 0
 #if defined(_STRING_)
    virtual BOOL SetParam(short iIndex, std::string& str) = 0;
 #endif // _STRING
 #if defined(__ATLSTR_H__) || defined(_WTL_USE_CSTRING)
    virtual BOOL SetParam(short iIndex, CString& str) = 0;
 #endif // __ATLSTR_H__
+#endif
 };
 
 
