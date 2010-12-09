@@ -64,11 +64,13 @@ class IDbDatabase;
 class IDbRecordset;
 class IDbCommand;
 
-class IDbSystem
+class IDbSystem : public IUnknown
 {
 public:
+/* 
    virtual BOOL Initialize() = 0;
    virtual void Terminate() = 0;
+*/
    virtual IDbDatabase*  CreateDatabase() = 0;
    virtual IDbRecordset* CreateRecordset(IDbDatabase* pDb) = 0;
    virtual IDbCommand*   CreateCommand(IDbDatabase* pDb) = 0;
@@ -92,7 +94,7 @@ public:
    virtual IDbError* GetError(short iIndex) = 0;
 };
 
-class IDbDatabase
+class IDbDatabase : public IUnknown
 {
 public:
    virtual BOOL Open(HWND hWnd, LPCTSTR pstrConnectionString, LPCTSTR pstrUser, LPCTSTR pstrPassword, long iType = DB_OPEN_DEFAULT) = 0;
@@ -105,7 +107,7 @@ public:
    virtual IDbErrors* GetErrors() = 0;
 };
 
-class IDbRecordset
+class IDbRecordset : public IUnknown
 {
 public:
    virtual BOOL Open(LPCTSTR pstrSQL, long lType = DB_OPEN_TYPE_FORWARD_ONLY, long lOptions = DB_OPTION_DEFAULT) = 0;
@@ -164,6 +166,17 @@ public:
 #endif // __ATLSTR_H__
 #endif
 };
+
+
+enum ENUM_DB_SYSTEM
+{
+    DB_SYSTEM_CVS
+  , DB_SYSTEM_OLEDB
+  , DB_SYSTEM_ODBC
+  ///etc
+};
+
+BOOL OpenDbSystem(long reserved, ENUM_DB_SYSTEM eSystem, IDbSystem** ppiDbSystem);
 
 
 #ifndef _NO_DB_HELPERS

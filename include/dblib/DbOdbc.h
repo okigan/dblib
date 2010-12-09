@@ -42,7 +42,10 @@ class COdbcErrors;
 class COdbcError;
 
 
-class COdbcSystem : public IDbSystem
+class COdbcSystem : 
+    public IDbSystem
+  , public CComObjectRoot
+  , public CComCoClass<COdbcSystem>
 {
 public:
    HENV m_henv;
@@ -50,6 +53,9 @@ public:
 public:
    COdbcSystem();
    virtual ~COdbcSystem();
+
+   BEGIN_COM_MAP(COdbcSystem)
+   END_COM_MAP()
 
    BOOL Initialize();
    void Terminate();
@@ -112,7 +118,10 @@ protected:
 };
 
 
-class COdbcDatabase : public IDbDatabase
+class COdbcDatabase : 
+    public IDbDatabase
+  , public CComObjectRoot
+  , public CComCoClass<COdbcDatabase>
 {
 friend COdbcRecordset;
 friend COdbcCommand;
@@ -129,8 +138,13 @@ protected:
 #endif
 
 public:
-   COdbcDatabase(COdbcSystem* pSystem);
+   COdbcDatabase();
    virtual ~COdbcDatabase();
+
+   void SetSystem(COdbcSystem* pSystem);
+
+   BEGIN_COM_MAP(COdbcDatabase)
+   END_COM_MAP()
 
 // IDbDatabase methods
 public:
@@ -201,7 +215,10 @@ public:
    LPVOID GetData() const;
 };
 
-class COdbcRecordset : public IDbRecordset
+class COdbcRecordset : 
+    public IDbRecordset
+  , public CComObjectRoot
+  , public CComCoClass<COdbcRecordset>
 {
 friend COdbcCommand;
 public:
@@ -217,8 +234,13 @@ protected:
    long m_lQueryTimeout;
 
 public:
-   COdbcRecordset(COdbcDatabase* pDb);
+   COdbcRecordset();
    virtual ~COdbcRecordset();
+
+   void SetDatabase(COdbcDatabase* pDb);
+
+   BEGIN_COM_MAP(COdbcDatabase)
+   END_COM_MAP()
 
 // IDbRecordset methods
 public:

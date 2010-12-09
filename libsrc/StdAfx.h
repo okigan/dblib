@@ -18,6 +18,7 @@
 #include <iostream>
 
 #include <atlbase.h>
+#include <atlcom.h>
 
 
 //{{AFX_INSERT_LOCATION}}

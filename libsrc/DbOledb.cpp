@@ -17,6 +17,7 @@ COledbSystem::COledbSystem()
 
 COledbSystem::~COledbSystem()
 {
+  Terminate();
 }
 
 BOOL COledbSystem::Initialize()
@@ -32,13 +33,27 @@ void COledbSystem::Terminate()
 
 IDbDatabase* COledbSystem::CreateDatabase()
 {
-   return new COledbDatabase(this);
+  CComObject<COledbDatabase>* obj = NULL;
+  CComObject<COledbDatabase>::CreateInstance(&obj);
+  obj->SetSystem(this);
+
+  IDbDatabase* pi = obj;
+  return pi;
 }
 
 IDbRecordset* COledbSystem::CreateRecordset(IDbDatabase* pDb)
 {
-   return new COledbRecordset(static_cast<COledbDatabase*>(pDb));
+  CComObject<COledbRecordset>* obj = NULL;
+  CComObject<COledbRecordset>::CreateInstance(&obj);
+
+  COledbDatabase* pDatabase = dynamic_cast<COledbDatabase*>(pDb);
+  obj->SetDatabase(pDatabase);
+
+  IDbRecordset* pi = obj;
+
+  return pi;
 }
+
 
 IDbCommand* COledbSystem::CreateCommand(IDbDatabase* pDb)
 {
@@ -50,10 +65,9 @@ IDbCommand* COledbSystem::CreateCommand(IDbDatabase* pDb)
 // COledbDatabase
 //
 
-COledbDatabase::COledbDatabase(COledbSystem* pSystem) : 
-   m_pSystem(pSystem)
+COledbDatabase::COledbDatabase() : 
+   m_pSystem(NULL)
 {
-   _ASSERTE(pSystem);
    ATLTRY(m_pErrors = new COledbErrors);
 #ifdef _DEBUG
    m_nRecordsets = 0;
@@ -68,6 +82,13 @@ COledbDatabase::~COledbDatabase()
    // Check that all recordsets have been closed and deleted
    _ASSERTE(m_nRecordsets==0);
 #endif
+}
+
+void COledbDatabase::SetSystem(COledbSystem* pSystem)
+{
+  m_pSystem = pSystem;
+
+  _ASSERTE(m_pSystem);
 }
 
 BOOL COledbDatabase::Open(HWND hWnd, LPCTSTR pstrConnectionString, LPCTSTR pstrUser, LPCTSTR pstrPassword, long iType)
@@ -378,8 +399,8 @@ void COledbDatabase::_SetRecordsetType(ICommand* pCommand, long lType, long /*lO
 // COledbRecordset
 //
 
-COledbRecordset::COledbRecordset(COledbDatabase* pDb) : 
-   m_pDb(pDb), 
+COledbRecordset::COledbRecordset() : 
+   m_pDb(NULL), 
    m_pData(NULL),
    m_rgBindings(NULL),
    m_hAccessor(DB_NULL_HACCESSOR), 
@@ -401,6 +422,11 @@ COledbRecordset::COledbRecordset(IRowset* pRS) :
    m_fEOF(true)
 {
    Attach(pRS);
+}
+
+void COledbRecordset::SetDatabase(COledbDatabase* pDb)
+{
+  m_pDb = pDb;
 }
 
 COledbRecordset::~COledbRecordset()

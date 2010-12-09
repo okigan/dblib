@@ -37,12 +37,26 @@ void CCsvSystem::Terminate()
 
 IDbDatabase* CCsvSystem::CreateDatabase()
 {
-   return new CCsvDatabase(this);
+  CComObject<CCsvDatabase>* obj = NULL;
+  CComObject<CCsvDatabase>::CreateInstance(&obj);
+  obj->SetSystem(this);
+
+  IDbDatabase* pi = obj;
+
+  return pi;
 }
 
 IDbRecordset* CCsvSystem::CreateRecordset(IDbDatabase* pDb)
 {
-   return new CCsvRecordset(static_cast<CCsvDatabase*>(pDb));
+  CComObject<CCsvRecordset>* obj = NULL;
+  CComObject<CCsvRecordset>::CreateInstance(&obj);
+
+  CCsvDatabase* pDatabase = dynamic_cast<CCsvDatabase*>(pDb);
+  obj->SetDatabase(pDatabase);
+
+  IDbRecordset* pi = obj;
+
+  return pi;
 }
 
 IDbCommand* CCsvSystem::CreateCommand(IDbDatabase* pDb)
@@ -55,20 +69,25 @@ IDbCommand* CCsvSystem::CreateCommand(IDbDatabase* pDb)
 // CCsvDatabase
 //
 
-CCsvDatabase::CCsvDatabase(CCsvSystem* pSystem) : 
-   m_pSystem(pSystem),
+CCsvDatabase::CCsvDatabase() : 
+   m_pSystem(NULL),
    m_pstrText(NULL),
    m_pColumns(NULL),
    m_bFixedWidth(false),
    m_cSep(',')
 {
-   _ASSERTE(m_pSystem);
    m_errs.m_err.m_pDb = this;
 }
 
 CCsvDatabase::~CCsvDatabase()
 {
    Close();
+}
+
+void CCsvDatabase::SetSystem(CCsvSystem* pSystem)
+{
+  m_pSystem = pSystem;
+  _ASSERTE(m_pSystem);
 }
 
 BOOL CCsvDatabase::Open(HWND /*hWnd*/, LPCTSTR pstrConnectionString, LPCTSTR /*pstrUser*/, LPCTSTR /*pstrPassword*/, long /*iType*/)
@@ -117,7 +136,9 @@ BOOL CCsvDatabase::ExecuteSQL(LPCTSTR pstrSQL, long lType /*= DB_OPEN_TYPE_FORWA
    _ASSERTE(IsOpen());
    _ASSERTE(!::IsBadStringPtr(pstrSQL,(UINT)-1));
 
-   CCsvRecordset rec(this);
+   CComObjectStack<CCsvRecordset> rec;
+   rec.SetDatabase(this);
+
    if( !rec.Open(pstrSQL, lType, lOptions) ) return FALSE;
    if( pdwRowsAffected ) *pdwRowsAffected = rec.GetRowCount();
    rec.Close();
@@ -237,19 +258,26 @@ BOOL CCsvDatabase::_BindColumns()
 // CCsvRecordset
 //
 
-CCsvRecordset::CCsvRecordset(CCsvDatabase* pDb) : 
-   m_pDb(pDb),
+CCsvRecordset::CCsvRecordset() : 
+   m_pDb(NULL),
    m_lCurRow(INT_MAX),
    m_fAttached(false)
 {
-   _ASSERTE(m_pDb);
-   _ASSERTE(m_pDb->IsOpen());
 }
 
 CCsvRecordset::~CCsvRecordset()
 {
    Close();
 }
+
+void CCsvRecordset::SetDatabase(CCsvDatabase* pDatabase)
+{
+  m_pDb = pDatabase;
+
+  _ASSERTE(m_pDb);
+  _ASSERTE(m_pDb->IsOpen());
+}
+
 
 BOOL CCsvRecordset::Open(LPCTSTR pstrSQL, long lType, long lOptions)
 {
@@ -619,18 +647,19 @@ BOOL CCsvCommand::Create(LPCTSTR pstrSQL, long /*lType = DB_OPEN_TYPE_FORWARD_ON
 
 BOOL CCsvCommand::Execute(IDbRecordset* pRecordset /*= NULL*/)
 {
-   _ASSERTE(m_pDb->IsOpen());
-   _ASSERTE(IsOpen());
-   if( pRecordset ) {
-      return pRecordset->Open(m_pszSQL, DB_OPEN_TYPE_FORWARD_ONLY, m_lOptions);
-   }
-   else {
-      CCsvRecordset rec(m_pDb);
-      if( !rec.Open(m_pszSQL, DB_OPEN_TYPE_FORWARD_ONLY, m_lOptions) ) return FALSE;
-      m_dwRows = rec.GetRowCount();
-      rec.Close();
-      return TRUE;
-   }
+  _ASSERTE(m_pDb->IsOpen());
+  _ASSERTE(IsOpen());
+  if( pRecordset ) {
+    return pRecordset->Open(m_pszSQL, DB_OPEN_TYPE_FORWARD_ONLY, m_lOptions);
+  }
+  else {
+    CComObjectStack<CCsvRecordset> rec;
+    rec.SetDatabase(m_pDb);
+    if( !rec.Open(m_pszSQL, DB_OPEN_TYPE_FORWARD_ONLY, m_lOptions) ) return FALSE;
+    m_dwRows = rec.GetRowCount();
+    rec.Close();
+    return TRUE;
+  }
 }
 
 void CCsvCommand::Close()

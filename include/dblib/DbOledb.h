@@ -45,11 +45,18 @@ class COledbErrors;
 class COledbError;
 
 
-class COledbSystem : public IDbSystem
+class COledbSystem : 
+    public IDbSystem
+  , public CComObjectRoot
+  , public CComCoClass<COledbSystem>
 {
 public:
    COledbSystem();
    virtual ~COledbSystem();
+
+   BEGIN_COM_MAP(COledbSystem)
+   END_COM_MAP()
+
 
    BOOL Initialize();
    void Terminate();
@@ -104,7 +111,10 @@ protected:
 };
 
 
-class COledbDatabase : public IDbDatabase
+class COledbDatabase : 
+    public IDbDatabase
+  , public CComObjectRoot
+  , public CComCoClass<COledbDatabase>
 {
 friend COledbRecordset;
 friend COledbCommand;
@@ -121,9 +131,15 @@ protected:
 #endif
 
 public:
-   COledbDatabase(COledbSystem* pSystem);
+   COledbDatabase();
    virtual ~COledbDatabase();
 
+   void SetSystem(COledbSystem* pSystem);
+
+   BEGIN_COM_MAP(COledbSystem)
+   END_COM_MAP()
+
+   //IDbDatabase
    BOOL Open(HWND hWnd, LPCTSTR pstrConnectionString, LPCTSTR pstrUser, LPCTSTR pstrPassword, long iType = DB_OPEN_DEFAULT);
    void Close();
    BOOL IsOpen() const;
@@ -145,7 +161,10 @@ protected:
 };
 
 
-class COledbRecordset : public IDbRecordset
+class COledbRecordset : 
+    public IDbRecordset
+  , public CComObjectRoot
+  , public CComCoClass<COledbRecordset>
 {
 friend COledbCommand;
 public:
@@ -167,9 +186,15 @@ protected:
 
 public:
    COledbRecordset(IRowset* pRS);
-   COledbRecordset(COledbDatabase* pDb);
+   COledbRecordset();
    virtual ~COledbRecordset();
 
+   void SetDatabase(COledbDatabase* pDb);
+
+   BEGIN_COM_MAP(COledbSystem)
+   END_COM_MAP()
+
+   //IDbRecordset
    BOOL Open(LPCTSTR pstrSQL, long lType = DB_OPEN_TYPE_FORWARD_ONLY, long lOptions = DB_OPTION_DEFAULT);
    void Close();
    BOOL IsOpen() const;

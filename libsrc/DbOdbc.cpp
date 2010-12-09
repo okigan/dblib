@@ -51,12 +51,26 @@ void COdbcSystem::Terminate()
 
 IDbDatabase* COdbcSystem::CreateDatabase()
 {
-   return new COdbcDatabase(this);
+  CComObject<COdbcDatabase>* obj = NULL;
+  CComObject<COdbcDatabase>::CreateInstance(&obj);
+  obj->SetSystem(this);
+
+  IDbDatabase* pi = obj;
+
+  return pi;
 }
 
 IDbRecordset* COdbcSystem::CreateRecordset(IDbDatabase* pDb)
 {
-   return new COdbcRecordset(static_cast<COdbcDatabase*>(pDb));
+  CComObject<COdbcRecordset>* obj = NULL;
+  CComObject<COdbcRecordset>::CreateInstance(&obj);
+
+  COdbcDatabase* pDatabase = dynamic_cast<COdbcDatabase*>(pDb);
+  obj->SetDatabase(pDatabase);
+
+  IDbRecordset* pi = obj;
+
+  return pi;
 }
 
 IDbCommand* COdbcSystem::CreateCommand(IDbDatabase* pDb)
@@ -69,11 +83,10 @@ IDbCommand* COdbcSystem::CreateCommand(IDbDatabase* pDb)
 // COdbcDatabase
 //
 
-COdbcDatabase::COdbcDatabase(COdbcSystem* pSystem) 
-   : m_pSystem(pSystem), m_hdbc(SQL_NULL_HDBC), m_hstmt(SQL_NULL_HSTMT), 
+COdbcDatabase::COdbcDatabase()
+   : m_pSystem(NULL), m_hdbc(SQL_NULL_HDBC), m_hstmt(SQL_NULL_HSTMT), 
      m_lLoginTimeout(-1L), m_lQueryTimeout(-1L)
 {
-   _ASSERTE(m_pSystem);
    ATLTRY(m_pErrors = new COdbcErrors);
 #ifdef _DEBUG
    m_nRecordsets=0;
@@ -88,6 +101,12 @@ COdbcDatabase::~COdbcDatabase()
    // Check that all recordsets have been closed and deleted
    _ASSERTE(m_nRecordsets==0);
 #endif
+}
+
+void COdbcDatabase::SetSystem(COdbcSystem* pSystem)
+{
+  m_pSystem = pSystem;
+  _ASSERTE(m_pSystem);
 }
 
 BOOL COdbcDatabase::Open(HWND hWnd, LPCTSTR pstrConnectionString, LPCTSTR pstrUser, LPCTSTR pstrPassword, long iType)
@@ -312,8 +331,8 @@ void COdbcDatabase::_SetRecordsetType(HSTMT hstmt, long lType, long /*lOptions*/
 // COdbcRecordset
 //
 
-COdbcRecordset::COdbcRecordset(COdbcDatabase* pDb)
-   : m_pDb(pDb), m_hstmt(SQL_NULL_HSTMT), m_fEOF(true), 
+COdbcRecordset::COdbcRecordset()
+   : m_pDb(NULL), m_hstmt(SQL_NULL_HSTMT), m_fEOF(true), 
      m_ppFields(NULL), m_nCols(0), m_fAttached(false),
      m_lQueryTimeout(-1L)
 {
@@ -330,6 +349,11 @@ COdbcRecordset::~COdbcRecordset()
 #ifdef _DEBUG
    m_pDb->m_nRecordsets--;
 #endif
+}
+
+void COdbcRecordset::SetDatabase(COdbcDatabase* pDb)
+{
+  m_pDb = pDb;
 }
 
 BOOL COdbcRecordset::Open(LPCTSTR pstrSQL, long lType, long lOptions)

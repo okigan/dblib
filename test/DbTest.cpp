@@ -3,14 +3,15 @@
 
 #include "stdafx.h"
 
+#include "dblib/dbbase.h"
 // The ODBC / OLEDB test requires a pre-created "Northwind" datasource.
 // Usually you would just create an ODBC MS Access entry for the Northwind.MDB
 // database that comes with many Microsoft tools (MS Access & VB6 to name a few).
-#include "dblib/DbOdbc.h"
-#include "dblib/DbOledb.h"
+//#include "dblib/DbOdbc.h"
+//#include "dblib/DbOledb.h"
 
 // The CSV test loads a sample file located in the source folder
-#include "dblib/DbCsv.h"
+//#include "dblib/DbCsv.h"
 
 // To remove SQL Lite from the test, comment the following line out
 // and remove the cSqlite.cpp from the project...
@@ -18,34 +19,31 @@
 //#include "DbSqlite3.h"
 
 
-void OdbcTest(LPCTSTR pstrConnection)
+void OdbcTest(IDbSystem* piDbSystem, LPCTSTR pstrConnection)
 {
-   COdbcSystem System;
-   System.Initialize();
+  CComPtr<IDbDatabase> piDatabase(piDbSystem->CreateDatabase());
 
-   COdbcDatabase Db(&System);
-   BOOL bRes = Db.Open(NULL, pstrConnection, _T(""), _T(""));
-   if( !bRes ) return;
-   COdbcRecordset Rec(&Db);
-   bRes = Rec.Open(_T("SELECT ProductID,ProductName FROM Products"));
-   if( !bRes ) return;
-   while( !Rec.IsEOF() ) {
-      long lID;
-      TCHAR szName[128];
-      Rec.GetField(0, lID);
-      Rec.GetField(1, szName, 128);
-      Rec.MoveNext();
-   }
-   Rec.Close();
-   Db.Close();
+  BOOL bRes = piDatabase->Open(NULL, pstrConnection, _T(""), _T(""));
+  if( !bRes ) return;
 
-   System.Terminate();
+  CComPtr<IDbRecordset> Rec(piDbSystem->CreateRecordset(piDatabase));
+  bRes = Rec->Open(_T("SELECT ProductID,ProductName FROM Products"));
+  if( !bRes ) return;
+  while( !Rec->IsEOF() ) {
+    long lID;
+    TCHAR szName[128];
+    Rec->GetField(0, lID);
+    Rec->GetField(1, szName, 128);
+    Rec->MoveNext();
+  }
+  Rec->Close();
+  piDatabase->Close();
 }
 
 
 void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
 {
-   pSystem->Initialize();
+   //pSystem->Initialize();
 
    CAutoPtr<IDbDatabase> pDb(pSystem->CreateDatabase());
    BOOL bRes;
@@ -58,7 +56,7 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
    }
 
    CAutoPtr<IDbRecordset> pRec(pSystem->CreateRecordset(pDb));
-   bRes = pRec->Open(_T("SELECT * FROM [dbo].[Study]"), DB_OPEN_TYPE_DYNASET);
+   bRes = pRec->Open(_T("SELECT * FROM [dbo].[tbStudy]"), DB_OPEN_TYPE_DYNASET);
    
    DWORD dwCnt = pRec->GetRowCount();
    dwCnt;
@@ -78,6 +76,25 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
       //DWORD dwRow = pRec->GetRowNumber();
    }
 
+   {
+     CAutoPtr<IDbCommand> pCmd(pSystem->CreateCommand(pDb));
+     bRes = pCmd->Create(_T("EXEC [dcmqrdb].[dbo].[spRegisterDcmSeries] @studyUiid = ?, @seriesUiid = ?;"));
+
+     bRes = pCmd->SetParam(0, _T("8888"));
+     bRes = pCmd->SetParam(1, _T("9999"));
+
+
+     CAutoPtr<IDbRecordset> pRec(pSystem->CreateRecordset(pDb));
+     bRes = pCmd->Execute(pRec);
+     while( !pRec->IsEOF() ) {
+       long lID;
+       TCHAR szTitle[128];
+       pRec->GetField(0, lID);
+       pRec->GetField(1, szTitle, 128);
+       pRec->MoveNext();
+     }
+   }
+
    DWORD nFields = pRec->GetColumnCount();
    nFields;
    long iIndex = pRec->GetColumnIndex(_T("UnitPrice"));
@@ -87,12 +104,12 @@ void Test1(IDbSystem* pSystem, LPCTSTR pstrConnection)
 
    pDb->Close();
 
-   pSystem->Terminate();
+   //pSystem->Terminate();
 }
 
 void Test2(IDbSystem* pSystem, LPCTSTR pstrConnection)
 {
-   pSystem->Initialize();
+   //pSystem->Initialize();
 
    CAutoPtr<IDbDatabase> pDb(pSystem->CreateDatabase());
    BOOL bRes;
@@ -123,30 +140,30 @@ void Test2(IDbSystem* pSystem, LPCTSTR pstrConnection)
 
    pDb->Close();
 
-   pSystem->Terminate();
+   //pSystem->Terminate();
 }
 
 
-void CsvTest(LPCTSTR pstrFilename)
+void CsvTest(IDbSystem* piDbSystem, LPCTSTR pstrFilename)
 {
    TCHAR szFilename[MAX_PATH];
    ::GetModuleFileName(NULL, szFilename, MAX_PATH);
    LPTSTR p = _tcsrchr(szFilename, '\\');
    _tcscpy(p + 1, pstrFilename);
-   CCsvSystem system;
-   CCsvDatabase db(&system);
-   db.Open(NULL, szFilename, NULL, NULL);
-   CCsvRecordset rec(&db);
-   rec.Open(_T(""));
-   while( !rec.IsEOF() ) {
+
+   CComPtr<IDbDatabase> db(piDbSystem->CreateDatabase());
+   db->Open(NULL, szFilename, NULL, NULL);
+   CComPtr<IDbRecordset> rec(piDbSystem->CreateRecordset(db));
+   rec->Open(_T(""));
+   while( !rec->IsEOF() ) {
       TCHAR szValue[128];
       long lValue;
-      rec.GetField(0, szValue, 128);
-      rec.GetField(7, lValue);
-      rec.MoveNext();
+      rec->GetField(0, szValue, 128);
+      rec->GetField(7, lValue);
+      rec->MoveNext();
    }
-   rec.Close();
-   db.Close();
+   rec->Close();
+   db->Close();
 }
 
 
@@ -155,16 +172,21 @@ int main(int /*argc*/, char* /*argv[]*/)
     LPCTSTR pstrCSV = _T("../../data/citylist.csv");
 
     printf("Testing csv...");
-    CsvTest(pstrCSV);
+    CComPtr<IDbSystem> piCsvDbSystem;
+    OpenDbSystem(0, DB_SYSTEM_CVS, &piCsvDbSystem);
+    CsvTest(piCsvDbSystem, pstrCSV);
     printf("Done.\n");
 
     LPCTSTR pstrDSN = _T("Northwind");
 
     //printf("Testing ODBC...");
-    //OdbcTest(pstrDSN);
+    CComPtr<IDbSystem> piOdbc;
+    OpenDbSystem(0, DB_SYSTEM_ODBC, &piOdbc);
+    OdbcTest(piOdbc, pstrDSN);
     //printf("Done.\n");
 
     pstrDSN = _T("Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=dcmqrdb");
+    pstrDSN = _T("Provider=SQLOLEDB;Data Source=167.81.183.231\\SQLEXPRESS;Persist Security Info=True;User ID=t;Password=t");
 
     //printf("Testing ODBC...");
     //CAutoPtr<IDbSystem> pODBC(new COdbcSystem());
@@ -173,7 +195,9 @@ int main(int /*argc*/, char* /*argv[]*/)
     //printf("Done.\n");
 
     printf("Testing OLEDB...");
-    CAutoPtr<IDbSystem> pOLEDB(new COledbSystem());
+    CComPtr<IDbSystem> pOLEDB;
+    OpenDbSystem(0, DB_SYSTEM_OLEDB, &pOLEDB);
+    
     Test1(pOLEDB, pstrDSN);
     Test2(pOLEDB, pstrDSN);
     printf("Done.\n");

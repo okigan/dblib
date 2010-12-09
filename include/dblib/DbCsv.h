@@ -32,6 +32,7 @@
 #include "DbBase.h"
 
 
+
 class CCsvDatabase;
 class CCsvRecordset;
 class CCsvCommand;
@@ -39,11 +40,18 @@ class CCsvErrors;
 class CCsvError;
 
 
-class CCsvSystem : public IDbSystem
+class CCsvSystem : 
+    public IDbSystem
+  , public CComObjectRoot
+  , public CComCoClass<CCsvSystem>
+
 {
 public:
    CCsvSystem();
    virtual ~CCsvSystem();
+
+   BEGIN_COM_MAP(CCsvSystem)
+   END_COM_MAP()
 
    BOOL Initialize();
    void Terminate();
@@ -103,7 +111,11 @@ public:
    CCsvColumn();
 };
 
-class CCsvDatabase : public IDbDatabase
+class CCsvDatabase : 
+    public IDbDatabase
+  , public CComObjectRoot
+  , public CComCoClass<CCsvDatabase>
+
 {
 friend CCsvRecordset;
 friend CCsvCommand;
@@ -119,8 +131,14 @@ protected:
    CCsvErrors m_errs;
 
 public:
-   CCsvDatabase(CCsvSystem* pSystem);
+   CCsvDatabase();
    virtual ~CCsvDatabase();
+
+   BEGIN_COM_MAP(CCsvSystem)
+   END_COM_MAP()
+
+   void SetSystem(CCsvSystem* pSystem);
+
 
 // IDbDatabase methods
 public:
@@ -140,7 +158,10 @@ protected:
    BOOL _Error(long lErrCode, LPCTSTR pstrMessage);
 };
 
-class CCsvRecordset : public IDbRecordset
+class CCsvRecordset : 
+    public IDbRecordset
+  , public CComObjectRoot
+  , public CComCoClass<CCsvDatabase>
 {
 friend CCsvCommand;
 protected:
@@ -153,8 +174,13 @@ protected:
    bool m_fAttached;
 
 public:
-   CCsvRecordset(CCsvDatabase* pDb);
+   CCsvRecordset();
    virtual ~CCsvRecordset();
+
+   void SetDatabase(CCsvDatabase* pDatabase);
+
+   BEGIN_COM_MAP(CCsvSystem)
+   END_COM_MAP()
 
 // IDbRecordset methods
 public:
