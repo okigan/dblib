@@ -2,7 +2,7 @@
 #define AFX_IDb_H__20011208_E6E3_45BF_60C8_0080AD509054__INCLUDED_
 
 /////////////////////////////////////////////////////////////////////////////
-// DbBase.h - Generic database interfaces
+// dblib.h - Generic database interfaces
 //
 // Written by Bjarke Viksoe (bjarke@viksoe.dk)
 // Copyright (c) 2001-2005 Bjarke Viksoe.

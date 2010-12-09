@@ -1,4 +1,5 @@
-SET(DBLIB_SOURCES DbCsv.cpp DbOledb.cpp DbOdbc.cpp)
+SET(DBLIB_HEADERS DbCsv.h DbOledb.h DbOdbc.h ../include/dblib/dblib.h)
+SET(DBLIB_SOURCES DbCsv.cpp DbOledb.cpp DbOdbc.cpp dblib.cpp)
 
 if (USE_SQLITE_2)
 	SET(DBLIB_SOURCES ${DBLIB_SOURCES} DbSqlite2.cpp)
@@ -8,7 +9,7 @@ if (USE_SQLITE_3)
 	SET(DBLIB_SOURCES ${DBLIB_SOURCES} DbSqlite3.cpp)
 endif (USE_SQLITE_3)
 
-ADD_LIBRARY(dblib ${DBLIB_SOURCES})
+ADD_LIBRARY(dblib ${DBLIB_SOURCES} ${DBLIB_HEADERS} )
 
 
 #INSTALL_TARGETS(${INSTALL_LIBDIR} dblib ${SQLLITE2_SOURCES} ${SQLLITE3_SOURCES})

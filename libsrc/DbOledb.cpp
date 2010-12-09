@@ -1,6 +1,6 @@
 
 #include "stdafx.h"
-#include "dblib/DbOledb.h"
+#include "DbOledb.h"
 
 #if _MSC_VER < 1300
    #pragma warning(disable : 4244)

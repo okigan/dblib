@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-#include "dblib/dbbase.h"
+#include "dblib/dblib.h"
 // The ODBC / OLEDB test requires a pre-created "Northwind" datasource.
 // Usually you would just create an ODBC MS Access entry for the Northwind.MDB
 // database that comes with many Microsoft tools (MS Access & VB6 to name a few).

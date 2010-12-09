@@ -7,7 +7,7 @@
 // Written by Bjarke Viksoe (bjarke@viksoe.dk)
 // Copyright (c) 2001 Bjarke Viksoe.
 //
-// Requires inclusion of the DbBase.h header.
+// Requires inclusion of the dblib.h header.
 //
 // This code may be used in compiled form in any way you desire. This
 // file may be redistributed by any means PROVIDING it is 
@@ -35,7 +35,7 @@
 #pragma comment(lib, "oledb.lib")
 //#pragma comment(lib, "oledbd.lib")
 
-#include "DbBase.h"
+#include "dblib/dblib.h"
 
 
 class COledbDatabase;
